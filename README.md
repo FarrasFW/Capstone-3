@@ -1,89 +1,80 @@
-Travel Insurance Claim Prediction
+Travel Insurance prediction
 
-Project Overview
+Gambaran Proyek
+Proyek ini bertujuan untuk memprediksi apakah seorang pemegang polis dari perusahaan asuransi perjalanan akan mengajukan klaim. Dengan memanfaatkan data historis dari pemegang polis, proyek ini membangun model prediktif untuk membantu perusahaan asuransi dalam mengelola risiko, mengoptimalkan strategi penetapan harga, dan meningkatkan alokasi sumber daya. Model ini membantu untuk mengantisipasi klaim, memberikan wawasan tentang pemegang polis yang lebih mungkin untuk mengajukan klaim asuransi.
 
-This project aims to predict whether a policyholder of a travel insurance company will file a claim. By leveraging historical data from policyholders, the project builds a predictive model to assist the insurance company in managing risk, optimizing pricing strategies, and improving resource allocation. The model helps to anticipate claims, providing insights into which policyholders are more likely to file insurance claims.
+Pernyataan Masalah
+Perusahaan asuransi bertujuan untuk memaksimalkan profitabilitas dengan meminimalkan klaim yang tidak perlu sambil memastikan bahwa mereka dapat memprediksi dengan akurat pemegang polis mana yang lebih mungkin untuk mengajukan klaim. Tantangannya adalah memprediksi apakah seorang pemegang polis akan mengajukan klaim, dengan mempertimbangkan berbagai faktor seperti destinasi perjalanan, produk asuransi, dan riwayat pemegang polis.
 
-Problem Statement
+Proyek ini berfokus pada pengembangan model machine learning yang memprediksi kemungkinan klaim yang akan diajukan oleh seorang pemegang polis, berdasarkan data historis. Perusahaan bertujuan untuk mengurangi false positives (salah memprediksi klaim akan diajukan) dan false negatives (gagal memprediksi klaim akan diajukan) karena kedua skenario ini membawa konsekuensi finansial yang signifikan.
 
-Insurance companies aim to maximize profitability by minimizing unnecessary claims while ensuring they accurately predict which policyholders are more likely to file a claim. The challenge is to predict whether a policyholder will file a claim, given various factors such as travel destination, insurance products, and policyholder history.
+Tujuan Proyek
+Mengembangkan model machine learning untuk memprediksi apakah seorang pemegang polis akan mengajukan klaim asuransi.
 
-The project focuses on developing a machine learning model that predicts the likelihood of a claim being made by a policyholder, based on historical data. The company aims to reduce false positives (wrongly predicting a claim will be made) and false negatives (failing to predict a claim will be made) as both scenarios carry significant financial consequences.
+Memastikan model meminimalkan false positives dan false negatives.
 
-Project Objectives
+Membantu mengoptimalkan strategi penetapan harga dengan memberikan prediksi yang akurat.
 
-Develop a machine learning model to predict whether a policyholder will file an insurance claim.
+Meningkatkan efisiensi pemrosesan klaim dan alokasi sumber daya.
 
-Ensure the model minimizes false positives and false negatives.
+Pemangku Kepentingan Utama
+Tim Manajemen: Tertarik untuk meningkatkan profitabilitas perusahaan secara keseluruhan dan efisiensi operasional.
 
-Help optimize pricing strategies by providing accurate predictions.
+Departemen Manajemen Risiko: Bertujuan untuk menilai dan mengurangi risiko finansial terkait klaim.
 
-Improve claims processing efficiency and resource allocation.
+Tim Underwriting: Menggunakan model untuk menilai tingkat risiko pemegang polis dan menetapkan premi dengan tepat.
 
-Key Stakeholders
+Tim Klaim: Dapat menggunakan prediksi untuk memprioritaskan pemegang polis berisiko tinggi dan mencegah klaim palsu.
 
-Management Team: Interested in improving overall company profitability and operational efficiency.
+Pemegang Polis: Akan mendapatkan manfaat dari harga yang lebih optimal dan pemrosesan klaim yang lebih cepat.
 
-Risk Management Department: Aims to better assess and mitigate financial risks related to claims.
-
-Underwriting Team: Uses the model to assess the risk levels of policyholders and set premiums accordingly.
-
-Claims Team: Can use the predictions to prioritize high-risk policyholders and prevent fraudulent claims.
-
-Policyholders: Will benefit from optimized pricing and faster claims processing.
-
-Investors and Shareholders: Interested in improving the company’s financial stability and reducing unexpected claims expenses.
+Investor dan Pemegang Saham: Tertarik untuk meningkatkan stabilitas keuangan perusahaan dan mengurangi pengeluaran klaim yang tidak terduga.
 
 Data
+Proyek ini menggunakan data historis pemegang polis yang mencakup:
 
-The project uses historical policyholder data, which includes:
+Destinasi: Destinasi perjalanan pemegang polis (dalam negeri atau internasional).
 
-Destination: The policyholder’s travel destination (domestic or international).
+Produk Asuransi: Jenis asuransi perjalanan yang dibeli oleh pemegang polis.
 
-Insurance Product: The type of travel insurance purchased by the policyholder.
+Riwayat Klaim: Apakah pemegang polis mengajukan klaim atau tidak.
 
-Claim History: Whether or not a claim was made by the policyholder.
+Variabel target untuk model ini adalah:
 
-The target variable for the model is:
+Klaim: Variabel biner dimana:
 
-Claim: A binary variable where:
+0 menandakan pemegang polis tidak mengajukan klaim.
 
-0 indicates the policyholder did not file a claim.
+1 menandakan pemegang polis mengajukan klaim.
 
-1 indicates the policyholder did file a claim.
+Metodologi
+Pra-pemrosesan Data
+Menangani Data yang Hilang: Nilai yang hilang dalam dataset ditangani dengan imputasi atau penghapusan berdasarkan tingkat keparahan.
 
-Methodology
+Rekayasa Fitur: Fitur relevan diekstraksi atau ditransformasi untuk meningkatkan kinerja model, seperti encoding variabel kategori atau penskalaan fitur numerik.
 
-Data Preprocessing
+Pembagian Data: Dataset dibagi menjadi set pelatihan dan pengujian untuk mengevaluasi kinerja model.
 
-Handling Missing Data: Missing values in the dataset are dealt with using imputation or removal based on the severity.
+Pengembangan Model
+Model Machine Learning: Berbagai model (seperti Logistic Regression, Random Forest, XGBoost) dilatih dan diuji untuk akurasi prediksi.
 
-Feature Engineering: Relevant features are extracted or transformed to improve model performance, such as encoding categorical variables or scaling numerical features.
+Evaluasi Model: Model dievaluasi menggunakan F1-Score: Keseimbangan antara presisi dan recall.
 
-Data Splitting: The dataset is split into training and testing sets to evaluate model performance.
+Penyempurnaan Hyperparameter
+Hyperparameter dioptimalkan menggunakan RandomizedSearchCV untuk menemukan konfigurasi terbaik yang memberikan kinerja terbaik pada model yang dipilih.
 
-Model Development
+Pemrosesan Data: Menangani nilai yang hilang, encoding variabel kategori, dan membagi data menjadi set pelatihan dan pengujian.
 
-Machine Learning Models: Various models (such as Logistic Regression, Random Forest, XGBoost) are trained and tested for prediction accuracy.
+Melatih Model: Memilih model (misalnya, RandomForestClassifier atau XGBoost) dan melatihnya dengan data pelatihan.
 
-Model Evaluation: The model is evaluated using F1-Score: Balance between precision and recall.
+Evaluasi Model: Memeriksa kinerja model menggunakan metrik klasifikasi seperti akurasi, presisi, recall, dan F1-score.
 
+Penerapan Model
+Penerapan Model: Setelah model sepenuhnya dilatih dan disesuaikan, model dapat diterapkan di lingkungan produksi untuk memprediksi klaim secara real-time.
 
-Hyperparameter Tuning
+Ekspansi Fitur: Lebih banyak fitur, seperti informasi demografis pemegang polis, dapat ditambahkan untuk meningkatkan akurasi model.
 
-Hyperparameters are optimized using techniques such as GridSearchCV or RandomizedSearchCV to find the best-performing configuration for the chosen model.
+Integrasi dengan Sistem Perusahaan: Model ini dapat diintegrasikan dengan sistem internal perusahaan asuransi untuk prediksi klaim otomatis.
 
-Preprocess the Data: Handle missing values, encode categorical variables, and split the data into training and test sets.
-
-Train the Model: Select a model (e.g., RandomForestClassifier or XGBoost) and train it on the training data.
-
-Evaluate the Model: Check the model’s performance using classification metrics such as accuracy, precision, recall, and F1-score.
-
-Model Deployment: Once the model is fully trained and tuned, it can be deployed into a production environment where it can be used in real-time to predict claims.
-
-Feature Expansion: More features, such as the policyholder’s demographic information, can be added to improve the model’s accuracy.
-
-Integration with Company Systems: The model can be integrated with the insurance company’s internal systems for automatic claim prediction.
-
-Conclusion
-This project demonstrates the power of machine learning in predicting whether a policyholder is likely to file an insurance claim. The predictive model can help insurance companies better manage risk, optimize pricing, and improve the efficiency of their claims process. With future enhancements, this system could be integrated into the company’s workflow to provide real-time predictions and significantly reduce operational costs.# Capstone-3
+Kesimpulan
+Proyek ini menunjukkan kekuatan machine learning dalam memprediksi apakah seorang pemegang polis kemungkinan akan mengajukan klaim asuransi. Model prediktif ini dapat membantu perusahaan asuransi dalam mengelola risiko, mengoptimalkan harga, dan meningkatkan efisiensi proses klaim. Dengan peningkatan di masa depan, sistem ini dapat diintegrasikan ke dalam alur kerja perusahaan untuk memberikan prediksi secara real-time dan secara signifikan mengurangi biaya operasional.
